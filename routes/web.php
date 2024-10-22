@@ -1,8 +1,7 @@
 <?php
 
+use App\Http\Controllers\Guest\PageController;
 use Illuminate\Support\Facades\Route;
-
-use App\Models\Movie;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,12 +14,7 @@ use App\Models\Movie;
 |
 */
 
-Route::get('/', function () {
-
-    $movies = Movie::all();
-
-    return view('welcome', compact('movies'));
-});
+Route::get('/', [PageController::class, 'index']);
 
 
 // Route::get(PERCORSO CON CUI ARRIVARE ALLA PAGINA, FUNZIONE DI CALLBACK CHE MI CREA LA RISPOSTA DA DARE ALL UTENTE)
