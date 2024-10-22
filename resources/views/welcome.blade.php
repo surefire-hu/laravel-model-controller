@@ -4,10 +4,22 @@
 
 @section('main-content')
 <h1>
-    Laravel Start 1
+    Laravel Model Controller
 </h1>
-
-<h2>
-    Ciao {{ $firstName }} {{ $lastName }}
-</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($movies as $movie)
+                <tr>
+                    <td>{{ $movie->id }}</td>
+                    <td>{{ $movie->title }}</td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
 @endsection
